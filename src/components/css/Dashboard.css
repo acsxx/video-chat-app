@@ -1,0 +1,77 @@
+.App {
+  display: flex;
+  align-items: stretch;
+  margin: 0;
+  padding: 0%;
+}
+/* ---------------------------------------------------
+      SIDEBAR STYLE
+  ----------------------------------------------------- */
+.sidebar {
+  background: rgb(39, 39, 39);
+  height: 100vh;
+  color: #fff;
+  margin-left: -250px;
+  transition: all 0.5s;
+}
+
+.sidebar.is-open {
+  margin-left: 0;
+  transition: 0.5s;
+}
+
+.sidebar-header {
+  background: rgb(43, 43, 43);
+}
+
+.sidebar-header h3 {
+  color: rgb(153, 145, 145);
+  padding: 0.7em;
+}
+
+.sidebar ul p {
+  color: rgb(187, 175, 175);
+  padding: 10px;
+}
+
+.Controls{
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 30px;
+}
+
+/* ---------------------------------------------------
+      CONTENT STYLE
+  ----------------------------------------------------- */
+
+@media only screen and (max-width: 500px) {
+  body {
+    overflow: hidden;
+  }
+
+  .content.is-open {
+    margin-left: 100%;
+  }
+
+  .sidebar.is-open {
+    min-width: 100%;
+    max-width: 100%;
+    margin-left: 0;
+    transition: all 0.5s, height 0s;
+  }
+
+  .sidebar.is-open > .sidebar-header span {
+    display: unset;
+  }
+}
+.mainVideos{
+    flex: 1;
+    flex-wrap: wrap;
+    display: flex;
+    flex-direction: row;
+}
+.mainRoom{
+  height: 100vh;
+  display: flex;
+} 
+

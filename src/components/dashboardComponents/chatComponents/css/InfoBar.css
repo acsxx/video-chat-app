@@ -1,0 +1,12 @@
+.infoBar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #1d1d1d;
+  font-size: large;
+  border-radius: 4px;
+  margin-top:  10px;
+}
+.infoText{
+  color:rgb(185, 178, 178)
+}
