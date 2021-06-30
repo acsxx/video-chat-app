@@ -4,7 +4,6 @@ import Register from "./Register";
 import Dashboard from "./Dashboard";
 import Welcome from "./Welcome";
 import { AuthProvider } from "./contexts/AuthContext"
-
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import PrivateRoute from "./PrivateRoute"
 import ForgotPassword from "./ForgotPassword"
@@ -20,7 +19,7 @@ const App = () => {
             <Route path="/register" component = {Register}/> 
             <Route path="/forgot-password" component = {ForgotPassword}/>
             <PrivateRoute path="/dashboard" component = {Dashboard}/>     
-            <Route component = {notFound}/>           
+            <Route path="" component = {notFound}/>           
           </Switch>
   
       </AuthProvider>
