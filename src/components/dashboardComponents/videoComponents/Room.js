@@ -11,10 +11,10 @@ const StyledVideo = styled.video`
     padding: 10px
 `;
 const Room = () => {
-  const { peers, userVideo, playVideo} = useSocket();
+  const { peers, userVideo, playVideo,roomID} = useSocket();
   useEffect(() => {
-    playVideo();
-  }, []);
+    playVideo(roomID);
+  }, [roomID]);
   
   return (
     <div className="mainRoom">

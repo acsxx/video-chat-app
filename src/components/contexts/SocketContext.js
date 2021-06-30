@@ -29,7 +29,7 @@ const SocketProvider = ({ children }) => {
   const [message, setMessage] = useState('');
   const [messages, setMessages] = useState([]);
 
-  function playVideo() {
+  function playVideo(roomID) {
     if (roomID && socket.id) {
       navigator.mediaDevices
         .getUserMedia({ video: videoConstraints, audio: true })

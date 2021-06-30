@@ -11,19 +11,24 @@ const Login = () => {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const history = useHistory();
-
+  var email = ""
+  var password = ""
   async function handleSubmit(e) {
     e.preventDefault();
 
     try {
       setError("");
-      setLoading(true);
-      await login(emailRef.current.value, passwordRef.current.value);
+      //setLoading(true);
+      if(emailRef.current.value != null && passwordRef.current.value != null){
+        email = emailRef.current.value
+        password = passwordRef.current.value
+      }
+      await login(email, password);
       history.push("/dashboard");
     } catch {
       return setError("Failed to login !!");
     }
-    setLoading(false);
+    //setLoading(false);
   }
   async function googleLogin() {
     try {
@@ -31,7 +36,8 @@ const Login = () => {
       setLoading(true);
       await signupGoogle();
       history.push("/dashboard");
-    } catch {
+    } catch(e) {
+      console.log(e)
       return setError("Failed to login !!");
     }
     setLoading(false);
