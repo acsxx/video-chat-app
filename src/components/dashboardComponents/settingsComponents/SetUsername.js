@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react'
-import { useHistory } from 'react-router'
+//import { useHistory } from 'react-router'
 import {useAuth} from "../../contexts/AuthContext"
 import alertify from "alertifyjs"
 
@@ -9,7 +9,7 @@ export default function SetUsername() {
     const {setUsername, currentUser} = useAuth()
     const [error , setError] = useState("")
     const [loading , setLoading] = useState(false)
-    const history = useHistory()
+    //const history = useHistory()
 
     function handleSubmit(e) {
         
@@ -20,7 +20,7 @@ export default function SetUsername() {
     const promises = []
  
     Promise.all(promises).then(() =>{
-        history.push("/dashboard")
+        //history.push("/dashboard")
         alertify.success("Your Username is updated")
     }).catch(() => {
         setError("Failed to set Username")

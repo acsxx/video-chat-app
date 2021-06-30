@@ -9,7 +9,6 @@ const Login = () => {
   const passwordRef = useRef();
   const { login,signupGoogle, signupFacebook } = useAuth();
   const [error, setError] = useState("");
-  const [loading, setLoading] = useState(false);
   const history = useHistory();
   var email = ""
   var password = ""
@@ -18,30 +17,25 @@ const Login = () => {
 
     try {
       setError("");
-      //setLoading(true);
       if(emailRef.current.value != null && passwordRef.current.value != null){
         email = emailRef.current.value
         password = passwordRef.current.value
       }
       await login(email, password);
       history.push("/dashboard");
-    } catch {
-      return setError("Failed to login !!");
+    } catch(e) {
+      return setError(e.message);
     }
-    //setLoading(false);
   }
-  async function googleLogin() {
+ /*  async function googleLogin() {
     try {
       setError("");
-      setLoading(true);
       await signupGoogle();
       history.push("/dashboard");
     } catch(e) {
-      console.log(e)
-      return setError("Failed to login !!");
+      return setError(e.message);
     }
-    setLoading(false);
-  }
+  } */
 
   return (
     <div className="container">
@@ -96,14 +90,13 @@ const Login = () => {
                       </div>
 
                       <button
-                        disabled={loading}
                         href="/dashboard"
                         type="submit"
                         className="btn btn-outline-success btn-block"
                       >
                         Login
                       </button>
-                      <GoogleLoginButton style={{marginTop:20, background: "#DB4437", color: "white", textAlign: "center"}}  onClick={() => googleLogin()}/>
+                      <GoogleLoginButton style={{marginTop:20, background: "#DB4437", color: "white", textAlign: "center"}}  onClick={() => signupGoogle()}/>
                       <FacebookLoginButton style={{marginTop:20, color: "white", textAlign: "center"}} onClick={() => signupFacebook()}/>
                     </form>
                     <hr />

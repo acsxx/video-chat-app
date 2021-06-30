@@ -13,7 +13,7 @@ export function AuthProvider({ children }) {
   const [loading, setLoading] = useState(true);
   const [name, setName] = useState("");
   const history = useHistory();
-
+  var displayName;
   function signup(email, password) {
     return auth.createUserWithEmailAndPassword(email, password);
   }
@@ -39,6 +39,10 @@ export function AuthProvider({ children }) {
     return auth.currentUser.updatePassword(password);
   }
   function setUsername(name) {
+    const user = firebase.auth().currentUser;
+    user.updateProfile({
+      displayName: name,
+    })
     return setName(name)
   }
 
@@ -64,6 +68,8 @@ export function AuthProvider({ children }) {
     setUsername,
     signupGoogle,
     signupFacebook,
+    displayName,
+
   };
   return (
     <AuthContext.Provider value={value}>

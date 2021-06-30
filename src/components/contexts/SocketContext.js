@@ -2,7 +2,8 @@ import React, { createContext, useState, useRef, useContext } from "react";
 import { io } from "socket.io-client";
 import Peer from "simple-peer";
 import { useAuth } from "./AuthContext";
-const socket = io("https://video-meet-app.herokuapp.com");
+const socket = io("https://video-meet-app.herokuapp.com/");
+//const socket = io("http://localhost:5000");
 
 const SocketContext = createContext();
 

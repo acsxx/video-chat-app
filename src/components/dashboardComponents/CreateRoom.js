@@ -7,12 +7,21 @@ function CreateRoom(props) {
 
     const getID = useRef("");
     const {setRoomID} = useSocket();
-    const {setUsername,name} = useAuth()
+    const {setUsername,name,currentUser} = useAuth()
     
+    function setName(name){
+      if(name){
+        return
+      }else{
+        setUsername(currentUser.displayName)
+      }
+    }
+
     function createRoom(){
         const id = uuidv4()
         setRoomID(id);
-        setUsername(name)
+        setName(name)
+        console.log(currentUser.displayName)
         props.history.push(`/room`);
     }
 

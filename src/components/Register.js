@@ -8,7 +8,7 @@ const Register = () => {
   const passwordConfirmRef = useRef();
   const { signup } = useAuth();
   const [error, setError] = useState("");
-  const [loading, setLoading] = useState(false);
+  //const [loading, setLoading] = useState(false);
   const history = useHistory();
 
   async function handleSubmit(e) {
@@ -20,13 +20,14 @@ const Register = () => {
 
     try {
       setError("");
-      setLoading(true);
+      //setLoading(true);
       await signup(emailRef.current.value, passwordRef.current.value);
       history.push("/dashboard");
-    } catch {
-      return setError("Failed to create an account");
+    } catch(e) {
+      console.log(e.message)
+      return setError(e.message);
     }
-    setLoading(false);
+    //setLoading(false);
   }
 
   return (
@@ -87,7 +88,6 @@ const Register = () => {
                   <div className="row justify-content-center">
                   <div className="col-sm-4">
                       <button
-                        disabled={loading}
                         type="submit"
                         className="btn btn-primary btn-user btn-block"
                       >
