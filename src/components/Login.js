@@ -27,7 +27,7 @@ const Login = () => {
       return setError(e.message);
     }
   }
- /*  async function googleLogin() {
+   async function googleLogin() {
     try {
       setError("");
       await signupGoogle();
@@ -35,7 +35,7 @@ const Login = () => {
     } catch(e) {
       return setError(e.message);
     }
-  } */
+  } 
 
   return (
     <div className="container">
@@ -96,7 +96,7 @@ const Login = () => {
                       >
                         Login
                       </button>
-                      <GoogleLoginButton style={{marginTop:20, background: "#DB4437", color: "white", textAlign: "center"}}  onClick={() => signupGoogle()}/>
+                      <GoogleLoginButton style={{marginTop:20, background: "#DB4437", color: "white", textAlign: "center"}}  onClick={() => googleLogin()}/>
                       <FacebookLoginButton style={{marginTop:20, color: "white", textAlign: "center"}} onClick={() => signupFacebook()}/>
                     </form>
                     <hr />
