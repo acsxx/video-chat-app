@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react";
 import { useAuth } from "./contexts/AuthContext";
 import logo from "./img/footer.png";
 import { Link, useHistory } from "react-router-dom";
-import { GoogleLoginButton, FacebookLoginButton } from "react-social-login-buttons";
+//import { GoogleLoginButton, FacebookLoginButton } from "react-social-login-buttons";
 
 const Login = () => {
   const emailRef = useRef();
@@ -88,7 +88,6 @@ const Login = () => {
                           ref={passwordRef}
                         />
                       </div>
-
                       <button
                         href="/dashboard"
                         type="submit"
@@ -96,8 +95,9 @@ const Login = () => {
                       >
                         Login
                       </button>
-                      <GoogleLoginButton style={{marginTop:20, background: "#DB4437", color: "white", textAlign: "center"}}  onClick={() => googleLogin()}/>
-                      <FacebookLoginButton style={{marginTop:20, color: "white", textAlign: "center"}} onClick={() => signupFacebook()}/>
+                      <hr/>
+                      <button className="btn btn-outline-danger btn-block" type="button" onClick={() => googleLogin()}>Login with Google</button>                  
+                      <button className="btn btn-outline-primary btn-block" type="button" onClick={() => signupFacebook()}>Login with Facebook</button>
                     </form>
                     <hr />
                     <div className="text-center">
