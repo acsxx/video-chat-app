@@ -1,5 +1,11 @@
-# Getting Started with Create React App
+# You can use the link above to open the application.
+https://live-video-chat.netlify.app
 
+You can use the link above to open the application.
+
+# OR
+
+# Getting Started with Create React App
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
