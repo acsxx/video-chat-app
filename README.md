@@ -1,7 +1,6 @@
-# You can use the link above to open the application.
+# You can use the link below to open the application.
 https://live-video-chat.netlify.app
 
-You can use the link above to open the application.
 
 # OR
 
